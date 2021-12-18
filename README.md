@@ -1,9 +1,10 @@
-# VICIDIAL INSTALLATION SCRIPTS
+# VICIDIAL INSTALLATION SCRIPTS (Default is Eastern Time Zone US)
 # Centos7 Vicidial Install pre_requisites 
 
 ```
-### Use YOUR SubDomain
+
 hostnamectl set-hostname xxxxxx.xxxxx.xxx
+### Use YOUR SubDomain
 
 vi /etc/hosts
 ##Change domain name for actual server ip (xxx.xxx.xxx.xxx   complete domain name    subdomain only)
