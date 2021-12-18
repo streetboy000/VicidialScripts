@@ -2,6 +2,7 @@
 # Centos7 Vicidial Install pre_requisites 
 
 ```
+### Use YOUR SubDomain
 hostnamectl set-hostname xxxxxx.xxxxx.xxx
 
 vi /etc/hosts
@@ -24,14 +25,14 @@ reboot
 ````
   Reboot Before running this script
 
-# Install VICIDIAL Now
+# Install VICIDIAL scripts
 
 ```
 git clone https://github.com/GenXoutsourcing/vicidial-install-scripts.git
 cd vicidial-install-scripts
 ```
 
-# Execute Centos Vicidial Install
+# Execute Centos7 Vicidial Install
 ```
 chmod +x vicidial-install-c7.sh
 ./vicidial-install-c7.sh
