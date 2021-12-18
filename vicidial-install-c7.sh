@@ -26,10 +26,6 @@ Alias /RECORDINGS/MP3 "/var/spool/asterisk/monitorDONE/MP3/"
     AllowOverride None
     Require all granted
 </Directory>
-
-<VirtualHost *:80>
-    ServerName other.example.com
-</VirtualHost>
 EOF
 
 
@@ -56,7 +52,6 @@ name = MariaDB
 baseurl = http://yum.mariadb.org/10.1/centos7-amd64
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
-
 MARIADB
 
 
@@ -139,7 +134,6 @@ interactive-timeout
 [mysqld_safe]
 #log-error = /var/log/mysqld/mysqld.log
 #pid-file = /var/run/mysqld/mysqld.pid
-
 MYSQLCONF
 
 #Enable and Start httpd and MariaDb
@@ -637,7 +631,6 @@ sox -t ul -r 8000 -c 1 ../mohmp3/manolo_camp-morning_coffee.ulaw -t ul manolo_ca
 cat <<WELCOME>> /var/www/html/index.html
 <META HTTP-EQUIV=REFRESH CONTENT="1; URL=/vicidial/welcome.php">
 Please Hold while I redirect you!
-
 WELCOME
 
 
