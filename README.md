@@ -31,7 +31,7 @@ git clone https://github.com/GenXoutsourcing/vicidial-install-scripts.git
 cd vicidial-install-scripts
 ```
 
-# Excute Centos Vicidial Install
+# Execute Centos Vicidial Install
 ```
 chmod +x vicidial-install-c7.sh
 ./vicidial-install-c7.sh
