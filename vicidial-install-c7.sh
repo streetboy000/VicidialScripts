@@ -634,6 +634,12 @@ sox ../mohmp3/manolo_camp-morning_coffee.gsm manolo_camp-morning_coffee.gsm vol 
 sox -t ul -r 8000 -c 1 ../mohmp3/manolo_camp-morning_coffee.ulaw -t ul manolo_camp-morning_coffee.ulaw vol 0.25
 
 
+cat <<WELCOME>> /var/www/html/index.html
+<META HTTP-EQUIV=REFRESH CONTENT="1; URL=/vicidial/welcome.php">
+Please Hold while I redirect you!
+
+WELCOME
+
 
 read -p 'Press Enter to Reboot: '
 
