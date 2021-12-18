@@ -1,43 +1,49 @@
 # VICIDIAL INSTALLATION SCRIPTS
-# Centos vididial Install pre_requisites 
+# Centos7 Vicidial Install pre_requisites 
 
 ```
+hostnamectl set-hostname xxxxxx.xxxxx.xxx
+
+vi /etc/hosts
+##Change domain name for actual server ip (xxx.xxx.xxx.xxx   complete domain name    subdomain only)
+
+timedatectl set-timezone America/New_York
+
 yum check-update
 yum update -y
 yum -y install epel-release
 yum update -y
-yum groupinstall 'Development Tools' -y
 yum install git -y
-yum install kernel*
+yum install -y kernel*
 
 #Disable SELINUX
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config    
-systemctl disable firewalld
 
 reboot
+
 ````
   Reboot Before running this script
 
 # Install VICIDIAL Now
 
 ```
-git clone https://github.com/jaganthoutam/vicidial-install-centos7.git
+git clone https://github.com/GenXoutsourcing/vicidial-install-scripts.git
 cd vicidial-install-scripts
 ```
 
-# Excute Centos vididial Install
+# Excute Centos Vicidial Install
 ```
-chmod +x vicidial-install-centos7.sh
-./vicidial-install-centos7.sh
+chmod +x vicidial-install-c7.sh
+./vicidial-install-c7.sh
 ```
 
-# Excute Ubuntu vididial Install
+# Excute Ubuntu Vicidial Install (coming soon)
 ```
 chmod +x vicidial-install-ubuntu18.sh
 ./vicidial-install-ubuntu18.sh
 ```
 
-# Install WEBRTC for VICIDIAL Now
+# Install WEBRTC for VICIDIAL Now (coming soon)
 # DO THIS IF YOU HAVE PUBLIC DOMAIN WITH PUBLIC IP ONLY
 
 ```
