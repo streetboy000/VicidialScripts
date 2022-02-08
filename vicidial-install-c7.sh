@@ -136,6 +136,11 @@ interactive-timeout
 #pid-file = /var/run/mysqld/mysqld.pid
 MYSQLCONF
 
+mkdir /var/log/mysqld
+mv /var/log/mysqld.log /var/log/mysqld/mysqld.log
+touch /var/log/mysqld/slow-queries.log
+chown -R mysql:mysql /var/log/mysqld
+
 #Enable and Start httpd and MariaDb
 systemctl enable httpd.service
 systemctl enable mariadb.service
