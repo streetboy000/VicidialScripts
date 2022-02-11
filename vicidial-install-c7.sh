@@ -310,9 +310,7 @@ echo "%%%%%%%%%%%%%%%Please Enter Mysql Password Or Just Press Enter if you Dont
 mysql -u root -p << MYSQLCREOF
 CREATE DATABASE asterisk DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 CREATE USER 'cron'@'localhost' IDENTIFIED BY '1234';
-GRANT SELECT,INSERT,UPDATE,DELETE,LOCK TABLES on asterisk.* TO cron@'%' IDENTIFIED BY '1234';
 CREATE USER 'custom'@'localhost' IDENTIFIED BY 'custom1234';
-GRANT SELECT,INSERT,UPDATE,DELETE,LOCK TABLES on asterisk.* TO custom@'%' IDENTIFIED BY 'custom1234';
 GRANT SELECT,INSERT,UPDATE,DELETE,LOCK TABLES on asterisk.* TO cron@localhost IDENTIFIED BY '1234';
 GRANT SELECT,INSERT,UPDATE,DELETE,LOCK TABLES on asterisk.* TO custom@localhost IDENTIFIED BY 'custom1234';
 GRANT RELOAD ON *.* TO cron@'%';
