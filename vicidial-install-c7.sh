@@ -653,6 +653,7 @@ cat <<WELCOME>> /var/www/html/index.html
 Please Hold while I redirect you!
 WELCOME
 
+chmod 777 /var/spool/asterisk/monitorDONE
 
 read -p 'Press Enter to Reboot: '
 
