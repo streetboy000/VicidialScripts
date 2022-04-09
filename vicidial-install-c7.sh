@@ -49,7 +49,7 @@ systemctl restart httpd
 cat <<MARIADB>> /etc/yum.repos.d/MariaDB.repo
 [mariadb]
 name = MariaDB
-baseurl = http://yum.mariadb.org/10.4/centos7-amd64
+baseurl = http://yum.mariadb.org/10.1/centos7-amd64
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 MARIADB
@@ -81,7 +81,6 @@ ft_min_word_len = 3
 max_connections = 800
 max_allowed_packet = 32M
 skip-external-locking
-sql_mode="NO_ENGINE_SUBSTITUTION"
 
 log-error = /var/log/mysqld/mysqld.log
 
