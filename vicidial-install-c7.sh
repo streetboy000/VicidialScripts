@@ -431,7 +431,6 @@ perl install.pl --no-prompt
 
 #Install Crontab
 cat <<CRONTAB>> /root/crontab-file
-#copy paste the below entries
 
 ### recording mixing/compressing/ftping scripts
 #0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57 * * * * /usr/share/astguiclient/AST_CRON_audio_1_move_mix.pl
@@ -458,6 +457,7 @@ cat <<CRONTAB>> /root/crontab-file
 ### fix the vicidial_agent_log once every hour and the full day run at night
 33 * * * * /usr/share/astguiclient/AST_cleanup_agent_log.pl
 50 0 * * * /usr/share/astguiclient/AST_cleanup_agent_log.pl --last-24hours
+
 ## uncomment below if using QueueMetrics
 #*/5 * * * * /usr/share/astguiclient/AST_cleanup_agent_log.pl --only-qm-live-call-check
 
@@ -513,6 +513,7 @@ cat <<CRONTAB>> /root/crontab-file
 
 ### inbound email parser
 * * * * * /usr/share/astguiclient/AST_inbound_email_parser.pl
+
 ### Daily Reboot
 #30 6 * * * /sbin/reboot
 
