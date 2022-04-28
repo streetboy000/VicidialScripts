@@ -1,5 +1,5 @@
 # VICIDIAL INSTALLATION SCRIPTS (Default is Eastern Time Zone US)
-# Centos7 Vicidial Install pre_requisites 
+# Centos7 and AlmaLinux Vicidial Install pre_requisites 
 
 ```
 
@@ -39,11 +39,12 @@ chmod +x vicidial-install-c7.sh
 ./vicidial-install-c7.sh
 ```
 
-# Excute Ubuntu Vicidial Install (coming soon)
+# Execute AlmaLinux Vicidial Install
 ```
-chmod +x vicidial-install-ubuntu18.sh
-./vicidial-install-ubuntu18.sh
+chmod +x vicidial-install-almainux.sh
+./vicidial-install-almalinux.sh
 ```
+
 
 # Install WEBRTC for VICIDIAL Now (coming soon)
 # DO THIS IF YOU HAVE PUBLIC DOMAIN WITH PUBLIC IP ONLY
