@@ -293,7 +293,7 @@ wget http://download.vicidial.com/required-apps/asterisk-13.29.2-vici.tar.gz
 tar -xvzf asterisk-*
 tar -xvzf libpri-*
 
-cd /usr/src/asterisk/asterisk*
+cd /usr/src/asterisk/asterisk-13.29.2
 
 : ${JOBS:=$(( $(nproc) + $(nproc) / 2 ))}
 ./configure --libdir=/usr/lib --with-gsm=internal --enable-opus --enable-srtp --with-ssl --enable-asteriskssl --with-pjproject-bundled --with-jansson-bundled
