@@ -541,6 +541,9 @@ crontab /root/crontab-file
 crontab -l
 
 #Install rc.local
+
+sudo sed -i 's|exit 0|### exit 0|g' /etc/rc.d/rc.local
+
 tee -a /etc/rc.d/rc.local <<EOF
 
 
@@ -594,6 +597,9 @@ sleep 20
 ### start up asterisk
 
 /usr/share/astguiclient/start_asterisk_boot.pl
+
+exit 0
+
 EOF
 
 chmod +x /etc/rc.d/rc.local
