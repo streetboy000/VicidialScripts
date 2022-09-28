@@ -514,6 +514,9 @@ cat <<CRONTAB>> /root/crontab-file
 ### inbound email parser
 * * * * * /usr/share/astguiclient/AST_inbound_email_parser.pl
 
+###backup
+47 23 * * * /usr/share/astguiclient/ADMIN_backup.pl
+
 ### Daily Reboot
 #30 6 * * * /sbin/reboot
 
