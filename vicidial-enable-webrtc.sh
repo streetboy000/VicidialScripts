@@ -1,9 +1,5 @@
 #!/bin/bash
 
-echo "Download PBXWebPhone agc"
-cd /var/www/html/agc/
-git clone https://github.com/chornyitaras/PBXWebPhone.git
-
 echo "Install certbot for LetsEncrypt"
 if [ -f /etc/redhat-release ]; then
 	yum -y install certbot python2-certbot-apache mod_ssl
