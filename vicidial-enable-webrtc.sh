@@ -22,9 +22,6 @@ echo "Change http.conf in Asterisk"
 wget -O /etc/asterisk/http.conf https://github.com/GenXoutsourcing/vicidial-install-scripts/main/asterisk-http.conf
 sed -i s/DOMAINNAME/"$DOMAINNAME"/g /etc/asterisk/http.conf
 
-echo "Change sip.conf in Asterisk"
-wget -O /etc/asterisk/sip.conf https://github.com/GenXoutsourcing/vicidial-install-scripts/main/asterisk-sip.conf
-sed -i s/DOMAINNAME/"$DOMAINNAME"/g /etc/asterisk/sip.conf
 
 echo "Reloading Asterisk"
 rasterisk -x reload
@@ -35,7 +32,7 @@ mysql -e "use asterisk; update servers set web_socket_url='wss://$DOMAINNAME:808
 
 echo "Add DOMAINAME system_settings webphone_url"
 echo "%%%%%%%%%%%%%%%This Wont work if you SET root Password%%%%%%%%%%%%%%%"
-mysql -e "use asterisk; update system_settings set webphone_url='PBXWebPhone/index.php';"
+mysql -e "use asterisk; update system_settings set webphone_url='https://phone.viciphone.com/viciphone.php';"
 
 echo "update the SIP_generic"
 mysql -e "use asterisk; update vicidial_conf_templates set template_contents='type=friend 
