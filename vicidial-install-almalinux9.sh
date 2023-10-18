@@ -24,6 +24,10 @@ yum in -y newt-devel libxml2-devel kernel-devel sqlite-devel libuuid-devel sox s
 yum in -y php-opcache libss7 mariadb-devel libss7* libopen* 
 yum -y install sqlite-devel httpd mod_ssl nano chkconfig
 yum install -y libedit-devel uuid* libxml2*
+yum -y install postfix
+
+systemctl start postfix
+systemctl enable postfix
 
 
 dnf --enablerepo=crb install libsrtp-devel -y
