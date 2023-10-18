@@ -42,9 +42,13 @@ chmod +x vicidial-install-c7.sh
 # Execute AlmaLinux8 Vicidial Install
 ```
 chmod +x vicidial-install-almalinux8.sh
-./vicidial-install-almalinux.sh
+./vicidial-install-almalinux8.sh
 ```
-
+# Execute AlmaLinux9 Vicidial Install
+```
+chmod +x vicidial-install-almalinux9.sh
+./vicidial-install-almalinux9.sh
+```
 
 # Install WEBRTC for VICIDIAL Now (coming soon)
 # DO THIS IF YOU HAVE PUBLIC DOMAIN WITH PUBLIC IP ONLY
