@@ -4,18 +4,22 @@ echo "Vicidial installation AlmaLinux9 with WebPhone(WebRTC/SIP.js)"
 
 export LC_ALL=C
 
+tee -a /etc/systemd/system.conf <<EOF
+DefaultLimitNOFILE=65536
+EOF
+
 sudo dnf install langpacks-en -y
 yum groupinstall "Development Tools" -y
 
-yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-yum -y install yum-utils
 dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm -y
 dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm -y
+yum -y install yum-utils
+
 dnf module enable php:remi-7.4 -y
 dnf module enable mariadb:10.5 -y
 
 dnf -y install dnf-plugins-core
-dnf config-manager --set-enabled powertools
+dnf config-manager --set-enabled crb
 
 yum install -y php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-opcache wget unzip make patch gcc gcc-c++ subversion php php-devel php-gd gd-devel readline-devel php-mbstring php-mcrypt php-imap php-ldap php-mysql php-odbc php-pear php-xml php-xmlrpc curl curl-devel perl-libwww-perl ImageMagick libxml2 libxml2-devel httpd libpcap libpcap-devel libnet ncurses ncurses-devel screen kernel* mutt glibc.i686 certbot python3-certbot-apache mod_ssl openssl-devel newt-devel libxml2-devel kernel-devel sqlite-devel libuuid-devel sox sendmail lame-devel htop iftop perl-File-Which php-opcache libss7 mariadb-devel libss7* libopen* 
 yum -y install sqlite-devel
@@ -72,7 +76,6 @@ systemctl restart httpd
 dnf install -y mariadb-server mariadb
 
 dnf -y install dnf-plugins-core
-dnf config-manager --set-enabled powertools
 
 
 systemctl enable mariadb
@@ -314,9 +317,6 @@ perl Makefile.PL
 make all
 make install 
 
-dnf --enablerepo=powertools install libsrtp-devel -y
-yum install -y elfutils-libelf-devel libedit-devel
-
 
 #Install Lame
 cd /usr/src
@@ -342,15 +342,11 @@ ldconfig
 #Install Dahdi
 echo "Install Dahdi"
 
-cd /etc/include
-wget https://dialer.one/newt.h
-
 cd /usr/src/
-mkdir dahdi-linux-complete-3.2.0+3.2.0
-cd dahdi-linux-complete-3.2.0+3.2.0
-wget https://dialer.one/dahdi-alma9.zip
-unzip dahdi-alma9.zip
-yum in newt* -y
+wget https://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-3.2.0+3.2.0.tar.gz
+tar xzf dahdi*
+cd /usr/src/dahdi-linux-complete-3.2.0+3.2.0
+
 
 sudo sed -i 's|(netdev, \&wc->napi, \&wctc4xxp_poll, 64);|(netdev, \&wc->napi, \&wctc4xxp_poll);|g' /usr/src/dahdi-linux-complete-3.2.0+3.2.0/linux/drivers/dahdi/wctc4xxp/base.c
 sudo sed -i 's|<linux/pci-aspm.h>|<linux/pci.h>|g' /usr/src/dahdi-linux-complete-3.2.0+3.2.0/linux/include/dahdi/kernel.h
