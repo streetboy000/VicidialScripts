@@ -41,7 +41,7 @@ chmod +x vicidial-install-c7.sh
 
 # Execute AlmaLinux8 Vicidial Install
 ```
-chmod +x vicidial-install-almalinux.sh
+chmod +x vicidial-install-almalinux8.sh
 ./vicidial-install-almalinux.sh
 ```
 
