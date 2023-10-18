@@ -708,16 +708,6 @@ systemctl enable rc-local
 systemctl start rc-local
 
 
-CustomLog /dev/null common
-
-Alias /RECORDINGS/MP3 "/var/spool/asterisk/monitorDONE/MP3/"
-
-<Directory "/var/spool/asterisk/monitorDONE/MP3/">
-    Options Indexes MultiViews
-    AllowOverride None
-    Require all granted
-</Directory>
-EOF
 
 ##Install Sounds
 
