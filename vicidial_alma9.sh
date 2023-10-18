@@ -231,6 +231,9 @@ cpanm Text::CSV
 cpanm Text::CSV_XS
 
 #Run CPAN again to be sure all installed
+
+yum install -y perl-CPAN perl-YAML perl-CPAN-DistnameInfo perl-libwww-perl perl-DBI perl-DBD-MySQL perl-GD perl-Env perl-Term-ReadLine-Gnu perl-SelfLoader perl-open.noarch
+
 cpan -i Tk String::CRC Tk::TableMatrix Net::Address::IP::Local Term::ReadLine::Gnu XML::Twig Digest::Perl::MD5 Spreadsheet::Read Net::Address::IPv4::Local RPM::Specfile Spreadsheet::XLSX Spreadsheet::ReadSXC MD5 Digest::MD5 Digest::SHA1 Bundle::CPAN Pod::Usage Getopt::Long DBI DBD::mysql Net::Telnet Time::HiRes Net::Server Mail::Sendmail Unicode::Map Jcode Spreadsheet::WriteExcel OLE::Storage_Lite Proc::ProcessTable IO::Scalar Scalar::Util Spreadsheet::ParseExcel Archive::Zip Compress::Raw::Zlib Spreadsheet::XLSX Test::Tester Spreadsheet::ReadSXC Text::CSV Test::NoWarnings Text::CSV_PP File::Temp Text::CSV_XS Spreadsheet::Read LWP::UserAgent HTML::Entities HTML::Strip HTML::FormatText HTML::TreeBuilder Switch Time::Local Mail::POP3Client Mail::IMAPClient Mail::Message IO::Socket::SSL readline
 
 yum install perl-CPAN -y
@@ -483,7 +486,7 @@ VARDB_port => 3306
 #  9 - Timeclock auto logout
 #  E - Email processor, (If multi-server system, this must only be on one server)
 #  S - SIP Logger (Patched Asterisk 13 required)
-VARactive_keepalives => 12345689EC
+VARactive_keepalives => 12345689ES
 
 # Asterisk version VICIDIAL is installed for
 VARasterisk_version => 16.X
@@ -627,9 +630,6 @@ cat <<CRONTAB>> /root/crontab-file
 ######TILTIX GARBAGE FILES DELETE
 #00 22 * * * root cd /tmp/ && find . -name '*TILTXtmp*' -type f -delete
 
-### Dynportal
-@reboot /usr/bin/VB-firewall --whitelist=ViciWhite --dynamic --quiet
-* * * * * /usr/bin/VB-firewall --whitelist=ViciWhite --dynamic --quiet
 
 
 CRONTAB
