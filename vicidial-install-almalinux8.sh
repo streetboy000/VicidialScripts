@@ -34,6 +34,30 @@ Alias /RECORDINGS/MP3 "/var/spool/asterisk/monitorDONE/MP3/"
     AllowOverride None
     Require all granted
 </Directory>
+
+###Update IP to your server to block direct IP access
+#<VirtualHost *:80>
+#ServerName xxx.xxx.xxx.xxx
+#Redirect 403 /
+#ErrorDocument 403 "Sorry, Direct IP access not allowed"
+#DocumentRoot /var/www/html
+#UserDir disabled
+#</VirtualHost>
+
+
+#<VirtualHost *:80>
+#    ServerName other.example.com
+#</VirtualHost>
+
+###Copy to ssl.conf and enter server IP
+#<IfModule mod_ssl.c>
+#    <VirtualHost *:443>
+#        ServerName xxx.xxx.xxx.xxx
+#        Redirect 403 /
+#        DocumentRoot /var/www/html
+#    </VirtualHost>
+#</IfModule>
+
 EOF
 
 
@@ -746,6 +770,10 @@ WELCOME
 
 chmod 777 /var/spool/asterisk/monitorDONE
 chkconfig asterisk off
+
+tee -a /etc/systemd/system.conf <<EOF
+DefaultLimitNOFILE=65536
+EOF
 
 read -p 'Press Enter to Reboot: '
 
