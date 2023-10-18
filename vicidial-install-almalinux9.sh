@@ -4,7 +4,7 @@ echo "Vicidial installation AlmaLinux9 with WebPhone(WebRTC/SIP.js)"
 
 export LC_ALL=C
 
-sudo dnf install langpacks-en
+sudo dnf install langpacks-en -y
 yum groupinstall "Development Tools" -y
 
 yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
