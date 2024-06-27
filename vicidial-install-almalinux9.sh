@@ -377,7 +377,7 @@ echo 'Continuing...'
 mkdir /usr/src/asterisk
 cd /usr/src/asterisk
 wget https://downloads.asterisk.org/pub/telephony/libpri/libpri-1.6.1.tar.gz
-wget https://download.vicidial.com/beta-apps/asterisk-16.17.0-vici.tar.gz
+wget https://download.vicidial.com/required-apps/asterisk-16.30.1-vici.tar.gz
 
 tar -xvzf asterisk-*
 tar -xvzf libpri-*
@@ -390,7 +390,7 @@ cd libsrtp-2.1.0
 make shared_library && sudo make install
 ldconfig
 
-cd /usr/src/asterisk/asterisk-16.17.0-vici
+cd /usr/src/asterisk/asterisk-16.30.1-vici
 
 yum in libuuid-devel libxml2-devel -y
 
